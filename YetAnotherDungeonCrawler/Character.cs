@@ -11,6 +11,17 @@ namespace YetAnotherDungeonCrawler
         public int AttackPower { get; private set; }
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="health"> The Health of the character </param>
+        /// <param name="attackPower"> The Damage the character does </param>
+        public Character(int health, int attackPower)
+        {
+            Health = health;
+            AttackPower = attackPower;
+        }
+
+        /// <summary>
         /// Attack another character
         /// </summary>
         /// <param name="other"> target of the attack </param>
