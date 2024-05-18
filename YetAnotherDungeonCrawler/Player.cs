@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace YetAnotherDungeonCrawler
 {
-    public class Player
+    public class Player : Character
     {
-        public int Health { get; private set; }
-        public int AttackPower { get; private set; }
 
         //Construtor
         public Player()
@@ -16,9 +14,6 @@ namespace YetAnotherDungeonCrawler
 
         //Do we need to store its position?
         public void Move(){}
-
-        //Probably needs a target to attack
-        public void Attack(){}
 
         //Does this mean we need an inventory?
         public void PickUpItem(){}

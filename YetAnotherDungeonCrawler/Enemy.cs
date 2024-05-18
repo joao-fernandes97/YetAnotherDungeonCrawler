@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace YetAnotherDungeonCrawler
 {
-    public class Enemy
+    public class Enemy : Character
     {
         
     }
