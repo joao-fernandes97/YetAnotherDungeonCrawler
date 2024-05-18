@@ -8,6 +8,8 @@ namespace YetAnotherDungeonCrawler
 {
     public class View
     {
+        public View(){}
+        
         public void ReadInput()
         {
 
@@ -21,7 +23,7 @@ namespace YetAnotherDungeonCrawler
         {
 
         }
-        
+
         public List<Room> ReadRoomConfig()
         {
             string line;
@@ -48,6 +50,15 @@ namespace YetAnotherDungeonCrawler
             }
 
             return roomList;
+        }
+
+        public void PrintRoomList(List<Room> roomList)
+        {
+            foreach (Room room in roomList)
+            {
+                Console.WriteLine(room.ToString());
+            }
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace YetAnotherDungeonCrawler
         }
         public void Start(View view)
         {
-
+            view.PrintRoomList(view.ReadRoomConfig());
         }
     }
 }

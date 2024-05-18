@@ -22,5 +22,10 @@ namespace YetAnotherDungeonCrawler
             this.connectedRoomIds = connectedRoomIds;
             this.isExit = isExit;
         }
+
+        public override string ToString()
+        {
+            return $"Room {id}: Connections: {connectedRoomIds} Is Exit: {isExit}";
+        }
     }
 }
