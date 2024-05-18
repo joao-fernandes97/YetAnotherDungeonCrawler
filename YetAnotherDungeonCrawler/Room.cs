@@ -7,6 +7,9 @@ namespace YetAnotherDungeonCrawler
 {
     public class Room
     {
-        
+        Enemy enemy;
+        Item item;
+        Room[] ConnectedRooms = new Room[4];
+        bool isExit;
     }
 }
