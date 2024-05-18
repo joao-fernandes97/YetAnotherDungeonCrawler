@@ -27,29 +27,42 @@ namespace YetAnotherDungeonCrawler
         public List<Room> ReadRoomConfig()
         {
             string line;
-            using StreamReader sr = new StreamReader("Rooms.txt");
-            List<Room> roomList = new List<Room>();
+            string directory = Directory.GetCurrentDirectory();
+            string filename = "Rooms.txt";
+            string fullPath = Path.Combine(directory, filename);
 
-            while ((line=sr.ReadLine()) != null)
+            if(File.Exists(fullPath))
             {
-                string[] roomProps = line.Split(';');
-                bool enemy = roomProps[0] == "true";
-                Item item = Enum.Parse<Item>(roomProps[1]);
+                using StreamReader sr = new StreamReader(fullPath);
 
-                int[] connectedRoomIds = new int[4];
-                
-                for (int i = 0; i < 4; i++)
+                List<Room> roomList = new List<Room>();
+
+                while ((line=sr.ReadLine()) != null)
                 {
-                    connectedRoomIds[i] = int.Parse(roomProps[2].Split(',')[i]);
+                    string[] roomProps = line.Split(';');
+                    int id = int.Parse(roomProps[0]);
+                    bool enemy = roomProps[1] == "true";
+                    Item item = Enum.Parse<Item>(roomProps[2]);
+
+                    int[] connectedRoomIds = new int[4];
+                
+                    for (int i = 0; i < 4; i++)
+                    {
+                        connectedRoomIds[i] = int.Parse(roomProps[3].Split(',')[i]);
+                    }
+
+                    bool isExit = roomProps[4] == "true";
+
+
+                    roomList.Add(new Room(id, enemy, item, connectedRoomIds, isExit));
                 }
 
-                bool isExit = roomProps[3] == "true";
-
-
-                roomList.Add(new Room(enemy, item, connectedRoomIds, isExit));
+                return roomList;
             }
-
-            return roomList;
+            
+            
+            Console.WriteLine($"File '{filename}' not found in directory '{directory}'.");
+            return new List<Room>();
         }
 
         public void PrintRoomList(List<Room> roomList)

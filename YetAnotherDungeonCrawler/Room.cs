@@ -15,8 +15,9 @@ namespace YetAnotherDungeonCrawler
         bool isExit;
         string description;
 
-        public Room(bool hasEnemy,Item item,int[] connectedRoomIds, bool isExit)
+        public Room(int id, bool hasEnemy,Item item,int[] connectedRoomIds, bool isExit)
         {
+            this.id = id;
             enemy = hasEnemy ? new Enemy(5,1) : null;
             this.item = item;
             this.connectedRoomIds = connectedRoomIds;
@@ -25,7 +26,7 @@ namespace YetAnotherDungeonCrawler
 
         public override string ToString()
         {
-            return $"Room {id}: Connections: {connectedRoomIds} Is Exit: {isExit}";
+            return $"Room {id}: Connections: {string.Join(", ", connectedRoomIds)} Is Exit: {isExit}";
         }
     }
 }
