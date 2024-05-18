@@ -7,9 +7,13 @@ namespace YetAnotherDungeonCrawler
 {
     public class Controller
     {
-        void Start()
+        public Controller()
         {
-            
+
+        }
+        public void Start(View view)
+        {
+
         }
     }
 }
