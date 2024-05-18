@@ -11,5 +11,6 @@ namespace YetAnotherDungeonCrawler
         Item item;
         Room[] ConnectedRooms = new Room[4];
         bool isExit;
+        string description;
     }
 }
