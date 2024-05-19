@@ -5,6 +5,7 @@ namespace YetAnotherDungeonCrawler
 {
     public class Player : Character
     {
+        private int maxHealth;
         public Room room;
         /// <summary>
         /// Constructor
@@ -13,7 +14,7 @@ namespace YetAnotherDungeonCrawler
         /// <param name="attackPower"> The Damage the player does </param>
         public Player(int health, int attackPower) : base(health, attackPower)
         {
-            
+            maxHealth = health;
         }
 
         //Do we need to store its position?
@@ -31,10 +32,10 @@ namespace YetAnotherDungeonCrawler
             //Needs to check for heal in inventory.
             Health += 10;
 
-            //Needs max health defined
-            //if (Health > x)
+            // Caps the health of the player at the established maximum.
+            if (Health > maxHealth)
             {
-                //Health = x;
+                Health = maxHealth;
             }
         }
 
