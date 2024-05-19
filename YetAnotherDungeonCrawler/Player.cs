@@ -30,7 +30,10 @@ namespace YetAnotherDungeonCrawler
         /// <param name="item"> Item that the player picks up </param>
         public void PickUpItem(Item item)
         {
-            Inventory[item]++;
+            if (item != Item.None)
+            {
+                Inventory[item]++;
+            }
         }
 
         /// <summary>
