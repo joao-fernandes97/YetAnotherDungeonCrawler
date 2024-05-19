@@ -1,0 +1,45 @@
+[
+    {
+        "ID":1,
+        "HasEnemy":true,
+        "HasItem":true,
+        "Exits": {
+            "North":2
+        },
+        "IsExit":false
+    },
+    {
+        "Id":2,
+        "HasEnemy":false,
+        "HasItem":true,
+        "Exits": {
+            "South":1,
+            "North":3
+        },
+        "IsExit":false
+    },
+    {
+        "Id":3,
+        "HasEnemy":false,
+        "HasItem":true,
+        "Exits":
+        {
+            "South":2,
+            "North":4
+        },
+        "IsExit":false
+    },
+    {
+        "Id":4,
+        "HasEnemy":false,
+        "HasItem":true,
+        "Exits": {
+            "South":3
+        },
+        "IsExit":true
+    }
+
+
+
+
+]
