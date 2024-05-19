@@ -24,8 +24,14 @@ namespace YetAnotherDungeonCrawler
             return room.Exits[direction];
         }
 
-        //Does this mean we need an inventory?
-        public void PickUpItem(){}
+        /// <summary>
+        /// Increments the amount of the item on the player's inventory
+        /// </summary>
+        /// <param name="item"> Item that the player picks up </param>
+        public void PickUpItem(Item item)
+        {
+            Inventory[item]++;
+        }
 
         /// <summary>
         /// Heals the player
