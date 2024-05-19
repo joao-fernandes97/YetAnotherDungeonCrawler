@@ -9,24 +9,19 @@ namespace YetAnotherDungeonCrawler
     {
         Enemy enemy;
         Item item;
-        int id;
-        int [] connectedRoomIds = new int [4];
-        Room[] ConnectedRooms = new Room[4];
-        bool isExit;
-        string description;
+        public int Id {get; set;}
+        public string Description {get; set;}
+        public Dictionary<string, int> Exits {get; set;}
+        public bool IsExit {get; set;}
+        public bool HasEnemy {get; set;}
+        public bool HasItem {get; set;}
+        
 
-        public Room(int id, bool hasEnemy,Item item,int[] connectedRoomIds, bool isExit)
-        {
-            this.id = id;
-            enemy = hasEnemy ? new Enemy(5,1) : null;
-            this.item = item;
-            this.connectedRoomIds = connectedRoomIds;
-            this.isExit = isExit;
-        }
+        public Room(){}
 
         public override string ToString()
         {
-            return $"Room {id}: Connections: {string.Join(", ", connectedRoomIds)} Is Exit: {isExit}";
+            return $"";
         }
     }
 }
