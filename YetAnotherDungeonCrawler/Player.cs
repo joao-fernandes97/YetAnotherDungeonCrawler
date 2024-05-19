@@ -26,7 +26,17 @@ namespace YetAnotherDungeonCrawler
         public void PickUpItem(){}
 
         //Probably uses a Heal item
-        public void Heal(){}
+        public void Heal()
+        {
+            //Needs to check for heal in inventory.
+            Health += 10;
+
+            //Needs max health defined
+            //if (Health > x)
+            {
+                //Health = x;
+            }
+        }
 
     }
 }

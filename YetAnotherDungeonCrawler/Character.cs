@@ -7,7 +7,7 @@ namespace YetAnotherDungeonCrawler
 {
     public class Character
     {
-        public int Health { get; private set; }
+        public int Health { get; protected set; }
         public int AttackPower { get; private set; }
 
         /// <summary>
