@@ -27,16 +27,25 @@ namespace YetAnotherDungeonCrawler
         //Does this mean we need an inventory?
         public void PickUpItem(){}
 
-        //Probably uses a Heal item
+        /// <summary>
+        /// Heals the player
+        /// </summary>
         public void Heal()
         {
-            //Needs to check for heal in inventory.
-            Health += 10;
-
-            // Caps the health of the player at the established maximum.
-            if (Health > maxHealth)
+            // Checks if there is a health potion in inventory
+            if (Inventory[Item.HealthPotion] > 0)
             {
-                Health = maxHealth;
+                // Decreases the amount of health potions in inventory
+                Inventory[Item.HealthPotion]--;
+
+                // Heals the player
+                Health += 10;
+
+                // Caps the health of the player at the established maximum.
+                if (Health > maxHealth)
+                {
+                    Health = maxHealth;
+                }
             }
         }
 
