@@ -5,6 +5,7 @@ namespace YetAnotherDungeonCrawler
 {
     public class Player : Character
     {
+        public Room room;
         /// <summary>
         /// Constructor
         /// </summary>
@@ -18,30 +19,7 @@ namespace YetAnotherDungeonCrawler
         //Do we need to store its position?
         public int Move(string direction)
         {
-            int id;
-            switch (direction)
-            {
-                case "North":
-                id = 1;
-                break;
-
-                case "South":
-                id = 2;
-                break;
-
-                case "East":
-                id = 3;
-                break;
-
-                case "West":
-                id = 4;
-                break;
-                
-                default:
-                id = 0;
-                break;
-            }
-            return id;
+            return room.Exits[direction];
         }
 
         //Does this mean we need an inventory?
