@@ -5,6 +5,7 @@ namespace YetAnotherDungeonCrawler
 {
     public class Player : Character
     {
+        public Room room;
         /// <summary>
         /// Constructor
         /// </summary>
@@ -16,13 +17,26 @@ namespace YetAnotherDungeonCrawler
         }
 
         //Do we need to store its position?
-        public void Move(){}
+        public int Move(string direction)
+        {
+            return room.Exits[direction];
+        }
 
         //Does this mean we need an inventory?
         public void PickUpItem(){}
 
         //Probably uses a Heal item
-        public void Heal(){}
+        public void Heal()
+        {
+            //Needs to check for heal in inventory.
+            Health += 10;
+
+            //Needs max health defined
+            //if (Health > x)
+            {
+                //Health = x;
+            }
+        }
 
     }
 }
