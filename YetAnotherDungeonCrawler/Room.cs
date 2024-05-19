@@ -21,7 +21,12 @@ namespace YetAnotherDungeonCrawler
 
         public override string ToString()
         {
-            return $"";
+            string exits = "";
+            foreach (KeyValuePair<string,int> kvp in Exits)
+            {
+                exits += string.Format("{0}:{1}",kvp.Key, kvp.Value);
+            }
+            return $"Room: {Id}, HasEnemy: {HasEnemy}, HasItem: {HasItem}, Exits:{exits}";
         }
     }
 }
