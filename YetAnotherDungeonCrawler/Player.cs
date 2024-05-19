@@ -5,6 +5,7 @@ namespace YetAnotherDungeonCrawler
 {
     public class Player : Character
     {
+        public Dictionary<Item, int> Inventory {get; private set;}
         private int maxHealth;
         public Room room;
         /// <summary>
