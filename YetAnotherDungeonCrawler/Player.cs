@@ -7,7 +7,7 @@ namespace YetAnotherDungeonCrawler
     {
         public Dictionary<Item, int> Inventory {get; private set;}
         private int maxHealth;
-        public Room room;
+        public Room Room { get; private set; }
         /// <summary>
         /// Constructor
         /// </summary>
@@ -18,10 +18,15 @@ namespace YetAnotherDungeonCrawler
             maxHealth = health;
         }
 
+        public void SetStartingRoom(Room Room)
+        {
+            this.Room = Room;
+        }
+        
         //Do we need to store its position?
         public int Move(string direction)
         {
-            return room.Exits[direction];
+            return Room.Exits[direction];
         }
 
         /// <summary>

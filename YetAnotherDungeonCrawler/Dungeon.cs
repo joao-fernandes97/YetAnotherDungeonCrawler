@@ -7,6 +7,33 @@ namespace YetAnotherDungeonCrawler
 {
     public class Dungeon
     {
-        List<Room> rooms;
+        readonly List<Room> rooms;
+
+        public Dungeon(List<Room> rooms)
+        {
+            this.rooms = rooms;
+        }
+
+        public void PopulateRooms()
+        {
+            foreach (Room room in rooms)
+            {
+                if(room.HasEnemy)
+                {
+                    room.Enemy = new Enemy(1,1);
+                }
+
+                if(room.HasItem)
+                {
+                    room.Item = Item.HealthPotion;
+                }
+            }
+        }
+
+        public Room GetStartingRoom()
+        {
+            return rooms[0];
+        }
     }
+    
 }

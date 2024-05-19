@@ -7,8 +7,8 @@ namespace YetAnotherDungeonCrawler
 {
     public class Room
     {
-        Enemy enemy;
-        Item item;
+        public Enemy Enemy { get; set; }
+        public Item Item { get; set; }
         public int Id {get; set;}
         public string Description {get; set;}
         public Dictionary<string, int> Exits {get; set;}

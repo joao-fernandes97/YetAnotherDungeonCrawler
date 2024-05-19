@@ -11,13 +11,23 @@ namespace YetAnotherDungeonCrawler
     {
         public View(){}
         
-        public void ReadInput()
+        public string ReadOption()
         {
-
+            return Console.ReadLine();
         }
-        public void PrintOutput()
+        public void WelcomeMsg()
         {
+            Console.WriteLine("Welcome!");
+        }
 
+        public void InvalidOption()
+        {
+            Console.WriteLine("Invalid Option");
+        }
+
+        public void PrintRoomDescription(Room room)
+        {
+            Console.WriteLine(room.Description);
         }
 
         public void ReadDungeonMap()
