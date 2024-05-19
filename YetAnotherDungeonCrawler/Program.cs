@@ -6,7 +6,9 @@ namespace YetAnotherDungeonCrawler
     {
         static void Main(string[] args)
         {
-            Controller controller= new Controller();
+            Player player= new Player(10,2);
+            
+            Controller controller= new Controller(player);
             View view = new View();
 
             controller.Start(view);
