@@ -84,5 +84,9 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine("Couldn't find a path in that direction!");
         }
         
+        public void EnemyMsg()
+        {
+            Console.WriteLine("There's an enemy in this room.");
+        }
     }
 }
