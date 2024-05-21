@@ -68,20 +68,21 @@ namespace YetAnotherDungeonCrawler
 
         }
 
-        public void HealthRestoredMSG()
+        public void HealthRestoredMsg()
         {
             int hp = player.Health;
             Console.WriteLine($"The player is at {hp} health.");
         }
 
-        public void NoHealsMSG()
+        public void NoHealsMsg()
         {
             Console.WriteLine("The player was unable to heal.");
         }
 
-        public void NoPathFoundMSG()
+        public void NoPathFoundMsg()
         {
             Console.WriteLine("Couldn't find a path in that direction!");
         }
+        
     }
 }
