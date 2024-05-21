@@ -86,36 +86,17 @@ namespace YetAnotherDungeonCrawler
                         }
                         break;
                     case "North":
-                        //if there's an enemy present
-                        //enemy present msg
-                        //elseif player.Room.Exits.North exists
-                        //move player to that room id
-                        //else
-                        //print no path found msg
-                        break;
                     case "West":
-                        //if there's an enemy present
-                        //enemy present msg
-                        //elseif player.Room.Exits.West exists
-                        //move player to that room id
-                        //else
-                        //print no path found msg
-                        break;
                     case "South":
-                        //if there's an enemy present
-                        //enemy present msg
-                        //elseif player.Room.Exits.South exists
-                        //move player to that room id
-                        //else
-                        //print no path found msg
-                        break;
                     case "East":
-                        //if there's an enemy present
-                        //enemy present msg
-                        //elseif player.Room.Exits.East exists
-                        //move player to that room id
-                        //else
-                        //print no path found msg
+                        if(player.HasValidTarget())
+                        {
+                            view.EnemyMsg();
+                        }
+                        else if(!player.Move(option, dungeon))
+                        {
+                            view.NoPathFoundMsg();
+                        }
                         break;
                     case "Exit":
                         if (currentRoom.IsExit)
