@@ -28,7 +28,9 @@ namespace YetAnotherDungeonCrawler
 
             string option;
 
-            while (player.Health >= 0)
+            bool end = false;
+
+            while (player.Health >= 0 && end != true)
             {
                 view.PrintRoomDescription(currentRoom);
                 //might want to append a message if there is a monster or item in the room
@@ -113,16 +115,20 @@ namespace YetAnotherDungeonCrawler
                         //print no path found msg
                         break;
                     case "Exit":
-                        //if player.Room.IsExit
-                        //end loop
+                        if (currentRoom.IsExit)
+                        {
                         //display victory message
-                        //end game
-                        //else
+                        end = true;
+                        }
+                        else
+                        {
                         //print no exit msg
+                        }
                         break;
                     case "Give Up":
                         //terminate loop
                         //print gave up msg
+                        end = true;
                         break;
                     default:
                         view.InvalidOption();
