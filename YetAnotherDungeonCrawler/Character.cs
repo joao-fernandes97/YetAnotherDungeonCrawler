@@ -27,6 +27,7 @@ namespace YetAnotherDungeonCrawler
         /// <param name="other"> target of the attack </param>
         public bool Attack(Character other)
         {
+            // Returns bool to check if the attack went through
             bool attackBool = false;
             if (Health <= 0)
             {
