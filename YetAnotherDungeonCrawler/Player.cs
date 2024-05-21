@@ -50,7 +50,8 @@ namespace YetAnotherDungeonCrawler
             bool healBool = false;
 
             // Checks if there is a health potion in inventory
-            if (Inventory[Item.HealthPotion] > 0)
+            // Also checks if health is below max health
+            if (Inventory[Item.HealthPotion] > 0 && Health < maxHealth)
             {
                 // Decreases the amount of health potions in inventory
                 Inventory[Item.HealthPotion]--;
