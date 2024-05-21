@@ -96,6 +96,11 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine($"There isn't any {target} in this room.");
         }
 
+        public void BattleReport()
+        {
+            Console.WriteLine($"Player: {player.Health} HP // Enemy: {player.Room.Enemy.Health} HP");
+        }
+
         public void VictoryMsg()
         {
             Console.WriteLine("You did it! You escaped the dungeon!");

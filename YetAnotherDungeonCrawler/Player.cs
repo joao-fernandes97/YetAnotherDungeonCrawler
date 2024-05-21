@@ -39,11 +39,11 @@ namespace YetAnotherDungeonCrawler
         /// Increments the amount of the item on the player's inventory
         /// </summary>
         /// <param name="item"> Item that the player picks up </param>
-        public void PickUpItem(Item item)
+        public void PickUpItem()
         {
-            if (item != Item.None)
+            if (Room.Item != Item.None)
             {
-                Inventory[item]++;
+                Inventory[Room.Item]++;
                 Room.Item = Item.None;
                 Room.HasItem = false;
             }

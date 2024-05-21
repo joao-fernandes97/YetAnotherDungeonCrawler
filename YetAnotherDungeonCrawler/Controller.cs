@@ -55,6 +55,10 @@ namespace YetAnotherDungeonCrawler
                         {
                             player.Attack(currentRoom.Enemy);
                             currentRoom.Enemy.Attack(player);
+                            view.BattleReport();
+                        }else
+                        {
+                            view.NoTargetMsg(currentRoom.Enemy);
                         }
                         //player Attack
                         //enemy Attack
@@ -63,11 +67,13 @@ namespace YetAnotherDungeonCrawler
                         //print no target msg
                         break;
                     case "Pick Up":
-                        //only if theres an item in the room
-                        //player PickUpItem
-                        //remove item from room
-                        //else
-                        //print no item msg
+                        if(currentRoom.HasItem)
+                        {
+                            player.PickUpItem();
+                        }else
+                        {
+                            view.NoTargetMsg(Item.HealthPotion);
+                        }
                         break;
                     case "Heal":
                         if(player.Heal())
