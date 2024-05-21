@@ -9,7 +9,7 @@ namespace YetAnotherDungeonCrawler
             Player player= new Player(10,2);
             
             Controller controller= new Controller(player);
-            View view = new View();
+            View view = new View(player);
 
             controller.Start(view);
         }

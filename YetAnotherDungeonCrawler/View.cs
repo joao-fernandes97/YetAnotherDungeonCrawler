@@ -9,7 +9,11 @@ namespace YetAnotherDungeonCrawler
 {
     public class View
     {
-        public View(){}
+        private Player player;
+        public View(Player player)
+        {
+            this.player = player;
+        }
         
         public string ReadOption()
         {
@@ -62,6 +66,12 @@ namespace YetAnotherDungeonCrawler
                 Console.WriteLine(room.ToString());
             }
 
+        }
+
+        public void HealthRestoredMSG()
+        {
+            int hp = player.Health;
+            Console.WriteLine($"The player is at {hp} health.");
         }
     }
 }
