@@ -29,7 +29,7 @@ namespace YetAnotherDungeonCrawler
         {
             // Returns bool to check if the attack went through
             bool attackBool = false;
-            if (Health >= 0)
+            if (Health > 0)
             {
                 attackBool = true;
                 // Subtract AP to other the target's health
