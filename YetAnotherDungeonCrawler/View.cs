@@ -84,24 +84,16 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine("Couldn't find a path in that direction!");
         }
         
-        public void EnemyMsg()
+        public void TargetMsg(object t)
         {
-            Console.WriteLine("There's an enemy in this room.");
+            string target = t.GetType().Name;
+            Console.WriteLine($"There's an {target} in this room.");
         }
 
-        public void ItemMsg()
+        public void NoTargetMsg(object t)
         {
-            Console.WriteLine("There's an item in this room.");
-        }
-
-        public void NoEnemyMsg()
-        {
-            Console.WriteLine("There isn't any enemy in this room.");
-        }
-
-        public void NoItemMsg()
-        {
-            Console.WriteLine("There isn't any item in this room.");
+            string target = t.GetType().Name;
+            Console.WriteLine($"There isn't any {target} in this room.");
         }
     }
 }
