@@ -9,6 +9,7 @@ namespace YetAnotherDungeonCrawler
     {
         private Player player;
         private Dungeon dungeon;
+        private Room currentRoom;
         
         public Controller(Player player)
         {
@@ -19,22 +20,37 @@ namespace YetAnotherDungeonCrawler
         {
             dungeon = new Dungeon(view.ReadRoomConfig());
             dungeon.PopulateRooms();
-            player.SetStartingRoom(dungeon.GetStartingRoom());
+            currentRoom = dungeon.GetStartingRoom();
+            player.SetStartingRoom(currentRoom);
             //view.PrintRoomList(view.ReadRoomConfig());
+
             view.WelcomeMsg();
 
             string option;
 
             while (player.Health != 0)
             {
-                view.PrintRoomDescription(player.Room);
+                view.PrintRoomDescription(currentRoom);
                 //might want to append a message if there is a monster or item in the room
+                if(player.HasValidTarget())
+                {
+                    view.EnemyMsg();
+                }
+                if(player.Room.HasItem)
+                {
+                    view.ItemMsg();
+                }
 
                 option = view.ReadOption();
                 switch (option)
                 {
                     case "Attack":
-                        //only if theres an enemy with hp above 0
+                        //if theres an enemy with hp above 0
+                        if(player.HasValidTarget())
+                        {
+                            player.Attack(currentRoom.Enemy);
+                            currentRoom.Enemy.Attack(player);
+                        }
                         //player Attack
                         //enemy Attack
                         //print result
@@ -49,33 +65,49 @@ namespace YetAnotherDungeonCrawler
                         //print no item msg
                         break;
                     case "Heal":
-                        //only if player has Item.HealingPotion in inv
-                        //player.Heal
-                        //if there's an enemy present
-                        //enemy attack
-                        //else
-                        //print no healing items msg
+                        if(player.Heal())
+                        {
+                            view.HealthRestoredMsg();
+                            //if there's an enemy present
+                            if(currentRoom.Enemy.Health > 0)
+                            {
+                                //enemy attack
+                                currentRoom.Enemy.Attack(player);
+                            }
+                        }
+                        else{
+                            //print healing error
+                            view.NoHealsMsg();
+                        }
                         break;
                     case "North":
-                        //if player.Room.Exits.North exists
+                        //if there's an enemy present
+                        //enemy present msg
+                        //elseif player.Room.Exits.North exists
                         //move player to that room id
                         //else
                         //print no path found msg
                         break;
                     case "West":
-                        //if player.Room.Exits.West exists
+                        //if there's an enemy present
+                        //enemy present msg
+                        //elseif player.Room.Exits.West exists
                         //move player to that room id
                         //else
                         //print no path found msg
                         break;
                     case "South":
-                        //if player.Room.Exits.South exists
+                        //if there's an enemy present
+                        //enemy present msg
+                        //elseif player.Room.Exits.South exists
                         //move player to that room id
                         //else
                         //print no path found msg
                         break;
                     case "East":
-                        //if player.Room.Exits.East exists
+                        //if there's an enemy present
+                        //enemy present msg
+                        //elseif player.Room.Exits.East exists
                         //move player to that room id
                         //else
                         //print no path found msg
