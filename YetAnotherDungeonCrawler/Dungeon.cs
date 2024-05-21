@@ -34,6 +34,17 @@ namespace YetAnotherDungeonCrawler
         {
             return rooms[0];
         }
+
+        public Room GetRoomById(int id)
+        {
+            foreach (Room room in rooms)
+            {
+                if(room.Id == id){
+                    return room;
+                }
+            }
+            return null;
+        }
     }
     
 }
