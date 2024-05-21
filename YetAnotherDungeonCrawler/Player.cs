@@ -16,6 +16,7 @@ namespace YetAnotherDungeonCrawler
         public Player(int health, int attackPower) : base(health, attackPower)
         {
             maxHealth = health;
+            Inventory = new Dictionary<Item, int>();
         }
 
         public void SetStartingRoom(Room Room)
@@ -43,7 +44,7 @@ namespace YetAnotherDungeonCrawler
         {
             if (Room.Item != Item.None)
             {
-                if (Inventory.ContainsKey(Room.Item))
+                if (!Inventory.ContainsKey(Room.Item))
                 {
                     Inventory[Room.Item] = 1;
                 }
