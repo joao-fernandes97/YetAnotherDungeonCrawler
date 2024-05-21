@@ -78,5 +78,10 @@ namespace YetAnotherDungeonCrawler
         {
             Console.WriteLine("The player was unable to heal.");
         }
+
+        public void NoPathFoundMSG()
+        {
+            Console.WriteLine("Couldn't find a path in that direction!");
+        }
     }
 }
