@@ -23,10 +23,16 @@ namespace YetAnotherDungeonCrawler
             this.Room = Room;
         }
         
-        //Do we need to store its position?
-        public int Move(string direction)
+        public bool Move(string direction, Dungeon dungeon)
         {
-            return Room.Exits[direction];
+            if(Room.Exits.ContainsKey(direction))
+            {
+                //if this method returns null I want to not assign the value
+                //but that shouldn't happen unless the Rooms file is fucked
+                Room = dungeon.GetRoomById(Room.Exits[direction]);
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -38,6 +44,8 @@ namespace YetAnotherDungeonCrawler
             if (item != Item.None)
             {
                 Inventory[item]++;
+                Room.Item = Item.None;
+                Room.HasItem = false;
             }
         }
 
