@@ -28,17 +28,17 @@ namespace YetAnotherDungeonCrawler
 
             string option;
 
-            while (player.Health != 0)
+            while (player.Health >= 0)
             {
                 view.PrintRoomDescription(currentRoom);
                 //might want to append a message if there is a monster or item in the room
                 if(player.HasValidTarget())
                 {
-                    view.EnemyMsg();
+                    view.TargetMsg(currentRoom.Enemy);
                 }
                 if(player.Room.HasItem)
                 {
-                    view.ItemMsg();
+                    view.TargetMsg(currentRoom.Item);
                 }
 
                 option = view.ReadOption();
