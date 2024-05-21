@@ -88,5 +88,10 @@ namespace YetAnotherDungeonCrawler
         {
             Console.WriteLine("There's an enemy in this room.");
         }
+
+        public void ItemMsg()
+        {
+            Console.WriteLine("There's an item in this room.");
+        }
     }
 }
