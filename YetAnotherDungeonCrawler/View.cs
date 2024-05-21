@@ -93,5 +93,15 @@ namespace YetAnotherDungeonCrawler
         {
             Console.WriteLine("There's an item in this room.");
         }
+
+        public void NoEnemyMsg()
+        {
+            Console.WriteLine("There isn't any enemy in this room.");
+        }
+
+        public void NoItemMsg()
+        {
+            Console.WriteLine("There isn't any item in this room.");
+        }
     }
 }
