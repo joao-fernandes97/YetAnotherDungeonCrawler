@@ -71,5 +71,10 @@ namespace YetAnotherDungeonCrawler
 
         }
 
+        public bool HasValidTarget()
+        {
+            return Room.HasEnemy && Room.Enemy.Health > 0;
+        }
+
     }
 }

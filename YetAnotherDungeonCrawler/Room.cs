@@ -14,8 +14,7 @@ namespace YetAnotherDungeonCrawler
         public Dictionary<string, int> Exits {get; set;}
         public bool IsExit {get; set;}
         public bool HasEnemy {get; set;}
-        public bool HasItem {get; set;}
-        
+        public bool HasItem {get; set;} 
 
         public Room(){}
 
