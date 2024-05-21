@@ -43,7 +43,14 @@ namespace YetAnotherDungeonCrawler
         {
             if (Room.Item != Item.None)
             {
+                if (Inventory.ContainsKey(Room.Item))
+                {
+                    Inventory[Room.Item] = 1;
+                }
+                else
+                {
                 Inventory[Room.Item]++;
+                }
                 Room.Item = Item.None;
                 Room.HasItem = false;
             }
