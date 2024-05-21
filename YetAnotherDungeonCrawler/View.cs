@@ -110,5 +110,12 @@ namespace YetAnotherDungeonCrawler
         {
             Console.WriteLine("You gave up and couldn't reach the end.");
         }
+
+        public void ConfirmMsg()
+        {
+            Console.Write("Press any Key to continue...");
+            Console.ReadKey(true);
+            Console.WriteLine("\n");
+        }
     }
 }

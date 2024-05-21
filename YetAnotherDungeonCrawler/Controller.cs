@@ -34,6 +34,9 @@ namespace YetAnotherDungeonCrawler
             {
                 view.PrintRoomDescription(currentRoom);
                 //might want to append a message if there is a monster or item in the room
+
+                view.ConfirmMsg();
+                
                 if(player.HasValidTarget())
                 {
                     view.TargetMsg(currentRoom.Enemy);
@@ -135,7 +138,7 @@ namespace YetAnotherDungeonCrawler
  
                 }
 
-                //view.ConfirmMsg();
+                view.ConfirmMsg();
         
             }
                
