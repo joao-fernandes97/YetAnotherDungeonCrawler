@@ -88,7 +88,7 @@ namespace YetAnotherDungeonCrawler
                     case "East":
                         if(player.HasValidTarget())
                         {
-                            view.EnemyMsg();
+                            view.TargetMsg(currentRoom.Enemy);
                         }
                         else if(!player.Move(option, dungeon))
                         {
