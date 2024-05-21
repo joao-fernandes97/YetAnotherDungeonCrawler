@@ -44,8 +44,11 @@ namespace YetAnotherDungeonCrawler
         /// <summary>
         /// Heals the player
         /// </summary>
-        public void Heal()
+        public bool Heal()
         {
+            // Returns bool to check if player healed or not.
+            bool healBool = false;
+
             // Checks if there is a health potion in inventory
             if (Inventory[Item.HealthPotion] > 0)
             {
@@ -59,8 +62,12 @@ namespace YetAnotherDungeonCrawler
                 if (Health > maxHealth)
                 {
                     Health = maxHealth;
+                    
                 }
+                healBool = true;
             }
+            return healBool;
+
         }
 
     }
