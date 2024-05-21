@@ -28,17 +28,19 @@ namespace YetAnotherDungeonCrawler
 
             string option;
 
-            while (player.Health != 0)
+            bool end = false;
+
+            while (player.Health >= 0 && end != true)
             {
                 view.PrintRoomDescription(currentRoom);
                 //might want to append a message if there is a monster or item in the room
                 if(player.HasValidTarget())
                 {
-                    view.EnemyMsg();
+                    view.TargetMsg(currentRoom.Enemy);
                 }
                 if(player.Room.HasItem)
                 {
-                    view.ItemMsg();
+                    view.TargetMsg(currentRoom.Item);
                 }
 
                 option = view.ReadOption();
@@ -94,16 +96,19 @@ namespace YetAnotherDungeonCrawler
                         }
                         break;
                     case "Exit":
-                        //if player.Room.IsExit
-                        //end loop
-                        //display victory message
-                        //end game
-                        //else
-                        //print no exit msg
+                        if (currentRoom.IsExit)
+                        {
+                            view.VictoryMsg();
+                            end = true;
+                        }
+                        else
+                        {
+                            view.NoExitMsg();
+                        }
                         break;
                     case "Give Up":
-                        //terminate loop
-                        //print gave up msg
+                        view.GaveUpMsg();
+                        end = true;
                         break;
                     default:
                         view.InvalidOption();

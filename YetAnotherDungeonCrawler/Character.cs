@@ -25,16 +25,23 @@ namespace YetAnotherDungeonCrawler
         /// Attack another character
         /// </summary>
         /// <param name="other"> target of the attack </param>
-        public void Attack(Character other)
+        public bool Attack(Character other)
         {
-            // Subtract AP to other the target's health
-            other.Health -= AttackPower;
-
-            // If the target's health is bellow 0 it goes to 0
-            if (other.Health < 0)
+            // Returns bool to check if the attack went through
+            bool attackBool = false;
+            if (Health <= 0)
             {
-                other.Health = 0;
+                attackBool = true;
+                // Subtract AP to other the target's health
+                other.Health -= AttackPower;
+
+                // If the target's health is bellow 0 it goes to 0
+                if (other.Health < 0)
+                {
+                    other.Health = 0;
+                }
             }
+            return attackBool;
         }
     }
 }
