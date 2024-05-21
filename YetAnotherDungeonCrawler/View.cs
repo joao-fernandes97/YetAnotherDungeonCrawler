@@ -73,5 +73,10 @@ namespace YetAnotherDungeonCrawler
             int hp = player.Health;
             Console.WriteLine($"The player is at {hp} health.");
         }
+
+        public void NoHealsMSG()
+        {
+            Console.WriteLine("The player was unable to heal.");
+        }
     }
 }
