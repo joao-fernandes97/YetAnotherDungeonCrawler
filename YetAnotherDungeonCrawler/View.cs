@@ -95,5 +95,20 @@ namespace YetAnotherDungeonCrawler
             string target = t.GetType().Name;
             Console.WriteLine($"There isn't any {target} in this room.");
         }
+
+        public void VictoryMsg()
+        {
+            Console.WriteLine("You did it! You escaped the dungeon!");
+        }
+
+        public void NoExitMsg()
+        {
+            Console.WriteLine("The exit is not in this room.");
+        }
+
+        public void GaveUpMsg()
+        {
+            Console.WriteLine("You gave up and couldn't reach the end.");
+        }
     }
 }

@@ -117,17 +117,16 @@ namespace YetAnotherDungeonCrawler
                     case "Exit":
                         if (currentRoom.IsExit)
                         {
-                        //display victory message
-                        end = true;
+                            view.VictoryMsg();
+                            end = true;
                         }
                         else
                         {
-                        //print no exit msg
+                            view.NoExitMsg();
                         }
                         break;
                     case "Give Up":
-                        //terminate loop
-                        //print gave up msg
+                        view.GaveUpMsg();
                         end = true;
                         break;
                     default:
