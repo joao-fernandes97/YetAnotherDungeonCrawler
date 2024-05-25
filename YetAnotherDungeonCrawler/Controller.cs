@@ -35,7 +35,7 @@ namespace YetAnotherDungeonCrawler
                 view.PrintRoomDescription(currentRoom);
                 //might want to append a message if there is a monster or item in the room
 
-                view.ConfirmMsg();
+                //view.ConfirmMsg();
                 
                 if(player.HasValidTarget())
                 {
@@ -70,6 +70,12 @@ namespace YetAnotherDungeonCrawler
                         if(currentRoom.Item != Item.None)
                         {
                             player.PickUpItem();
+                            if(player.HasValidTarget())
+                            {
+                                //enemy attack
+                                currentRoom.Enemy.Attack(player);
+                                view.BattleReport();
+                            }
                         }else
                         {
                             view.NoTargetMsg(Item.HealthPotion);
@@ -80,10 +86,11 @@ namespace YetAnotherDungeonCrawler
                         {
                             view.HealthRestoredMsg();
                             //if there's an enemy present
-                            if(currentRoom.Enemy.Health > 0)
+                            if(player.HasValidTarget())
                             {
                                 //enemy attack
                                 currentRoom.Enemy.Attack(player);
+                                view.BattleReport();
                             }
                         }
                         else{
@@ -103,6 +110,7 @@ namespace YetAnotherDungeonCrawler
                         {
                             view.NoPathFoundMsg();
                         }
+                        currentRoom = player.Room;
                         break;
                     case "Exit":
                         if (currentRoom.IsExit)
