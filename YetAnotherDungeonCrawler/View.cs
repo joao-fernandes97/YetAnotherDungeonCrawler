@@ -21,7 +21,7 @@ namespace YetAnotherDungeonCrawler
         }
         public void WelcomeMsg()
         {
-            Console.WriteLine("Welcome!");
+            Console.WriteLine("Hear ye who enters this place, find the EXIT or GIVE UP and die.");
         }
 
         public void InvalidOption()
@@ -84,10 +84,20 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine("Couldn't find a path in that direction!");
         }
         
-        public void TargetMsg(object t)
+        /* public void TargetMsg(object t)
         {
             string target = t.GetType().Name;
             Console.WriteLine($"There's an {target} in this room.");
+        } */
+
+        public void EnemyMsg()
+        {
+            Console.WriteLine($"There's an enemy in this room. ATTACK to get rid of it.");
+        }
+
+        public void ItemMsg(Item item)
+        {
+            Console.WriteLine($"You can PICK UP the {item} to add it to your inventory");
         }
 
         public void NoTargetMsg(object t)

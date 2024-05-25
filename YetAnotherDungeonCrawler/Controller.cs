@@ -39,17 +39,17 @@ namespace YetAnotherDungeonCrawler
                 
                 if(player.HasValidTarget())
                 {
-                    view.TargetMsg(currentRoom.Enemy);
+                    view.EnemyMsg();
                 }
                 if(player.Room.Item != Item.None)
                 {
-                    view.TargetMsg(currentRoom.Item);
+                    view.ItemMsg(currentRoom.Item);
                 }
 
                 option = view.ReadOption();
                 switch (option)
                 {
-                    case "Attack":
+                    case "attack":
                         //if theres an enemy with hp above 0
                         if(player.HasValidTarget())
                         {
@@ -66,7 +66,7 @@ namespace YetAnotherDungeonCrawler
                         //else
                         //print no target msg
                         break;
-                    case "Pick Up":
+                    case "pick up":
                         if(currentRoom.Item != Item.None)
                         {
                             player.PickUpItem();
@@ -81,7 +81,7 @@ namespace YetAnotherDungeonCrawler
                             view.NoTargetMsg(Item.HealthPotion);
                         }
                         break;
-                    case "Heal":
+                    case "heal":
                         if(player.Heal())
                         {
                             view.HealthRestoredMsg();
@@ -98,13 +98,13 @@ namespace YetAnotherDungeonCrawler
                             view.NoHealsMsg();
                         }
                         break;
-                    case "North":
-                    case "West":
-                    case "South":
-                    case "East":
+                    case "north":
+                    case "west":
+                    case "south":
+                    case "east":
                         if(player.HasValidTarget())
                         {
-                            view.TargetMsg(currentRoom.Enemy);
+                            view.EnemyMsg();
                         }
                         else if(!player.Move(option, dungeon))
                         {
@@ -112,7 +112,7 @@ namespace YetAnotherDungeonCrawler
                         }
                         currentRoom = player.Room;
                         break;
-                    case "Exit":
+                    case "exit":
                         if (currentRoom.IsExit)
                         {
                             view.VictoryMsg();
@@ -123,7 +123,7 @@ namespace YetAnotherDungeonCrawler
                             view.NoExitMsg();
                         }
                         break;
-                    case "Give Up":
+                    case "give up":
                         view.GaveUpMsg();
                         end = true;
                         break;
