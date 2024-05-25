@@ -42,12 +42,15 @@ namespace YetAnotherDungeonCrawler
         /// <param name="item"> Item that the player picks up </param>
         public void PickUpItem()
         {
+            // Checks if there is an item to be picked up
             if (Room.Item != Item.None)
             {
+                // If the item isn't in the inventory places one there
                 if (!Inventory.ContainsKey(Room.Item))
                 {
                     Inventory[Room.Item] = 1;
                 }
+                // If it's already in inventory increments it by one
                 else
                 {
                 Inventory[Room.Item]++;
