@@ -20,7 +20,7 @@ namespace YetAnotherDungeonCrawler
             {
                 if(room.HasEnemy)
                 {
-                    room.Enemy = new Enemy(1,1);
+                    room.Enemy = new Enemy(5,2);
                 }
             }
         }
