@@ -53,7 +53,6 @@ namespace YetAnotherDungeonCrawler
                 Inventory[Room.Item]++;
                 }
                 Room.Item = Item.None;
-                Room.HasItem = false;
             }
         }
 
@@ -67,21 +66,25 @@ namespace YetAnotherDungeonCrawler
 
             // Checks if there is a health potion in inventory
             // Also checks if health is below max health
-            if (Inventory[Item.HealthPotion] > 0 && Health < maxHealth)
+            if(Inventory.ContainsKey(Item.HealthPotion))
             {
-                // Decreases the amount of health potions in inventory
-                Inventory[Item.HealthPotion]--;
-
-                // Heals the player
-                Health += 10;
-
-                // Caps the health of the player at the established maximum.
-                if (Health > maxHealth)
+                if (Inventory[Item.HealthPotion] > 0 && Health < maxHealth)
                 {
-                    Health = maxHealth;
+                    // Decreases the amount of health potions in inventory
+                    Inventory[Item.HealthPotion]--;
+
+                    // Heals the player
+                    Health += 10;
+
+                    // Caps the health of the player at the established maximum.
+                    if (Health > maxHealth)
+                    {
+                        Health = maxHealth;
                     
+                    }
+                    healBool = true;
                 }
-                healBool = true;
+            
             }
             return healBool;
 
