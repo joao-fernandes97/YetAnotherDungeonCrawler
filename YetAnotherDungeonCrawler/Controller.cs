@@ -49,7 +49,7 @@ namespace YetAnotherDungeonCrawler
                 option = view.ReadOption();
                 switch (option)
                 {
-                    case "Attack":
+                    case "attack":
                         //if theres an enemy with hp above 0
                         if(player.HasValidTarget())
                         {
@@ -66,7 +66,7 @@ namespace YetAnotherDungeonCrawler
                         //else
                         //print no target msg
                         break;
-                    case "Pick Up":
+                    case "pickup":
                         if(currentRoom.Item != Item.None)
                         {
                             player.PickUpItem();
@@ -81,7 +81,7 @@ namespace YetAnotherDungeonCrawler
                             view.NoTargetMsg(Item.HealthPotion);
                         }
                         break;
-                    case "Heal":
+                    case "heal":
                         if(player.Heal())
                         {
                             view.HealthRestoredMsg();
@@ -98,10 +98,10 @@ namespace YetAnotherDungeonCrawler
                             view.NoHealsMsg();
                         }
                         break;
-                    case "North":
-                    case "West":
-                    case "South":
-                    case "East":
+                    case "north":
+                    case "west":
+                    case "south":
+                    case "east":
                         if(player.HasValidTarget())
                         {
                             view.TargetMsg(currentRoom.Enemy);
@@ -112,7 +112,7 @@ namespace YetAnotherDungeonCrawler
                         }
                         currentRoom = player.Room;
                         break;
-                    case "Exit":
+                    case "exit":
                         if (currentRoom.IsExit)
                         {
                             view.VictoryMsg();
@@ -123,7 +123,7 @@ namespace YetAnotherDungeonCrawler
                             view.NoExitMsg();
                         }
                         break;
-                    case "Give Up":
+                    case "giveup":
                         view.GaveUpMsg();
                         end = true;
                         break;

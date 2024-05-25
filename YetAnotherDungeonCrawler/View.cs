@@ -17,7 +17,7 @@ namespace YetAnotherDungeonCrawler
         
         public string ReadOption()
         {
-            return Console.ReadLine();
+            return Console.ReadLine().ToLower();
         }
         public void WelcomeMsg()
         {
