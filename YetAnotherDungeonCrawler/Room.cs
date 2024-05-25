@@ -14,7 +14,6 @@ namespace YetAnotherDungeonCrawler
         public Dictionary<string, int> Exits {get; set;}
         public bool IsExit {get; set;}
         public bool HasEnemy {get; set;}
-        public bool HasItem {get; set;} 
 
         public Room(){}
 
@@ -25,7 +24,7 @@ namespace YetAnotherDungeonCrawler
             {
                 exits += string.Format("{0}:{1}",kvp.Key, kvp.Value);
             }
-            return $"Room: {Id}, HasEnemy: {HasEnemy}, HasItem: {HasItem}, Exits:{exits}";
+            return $"Room: {Id}, HasEnemy: {HasEnemy}, Exits:{exits}, Item: {Item}";
         }
     }
 }

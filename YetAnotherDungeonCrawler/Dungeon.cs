@@ -22,11 +22,6 @@ namespace YetAnotherDungeonCrawler
                 {
                     room.Enemy = new Enemy(1,1);
                 }
-
-                if(room.HasItem)
-                {
-                    room.Item = Item.HealthPotion;
-                }
             }
         }
 

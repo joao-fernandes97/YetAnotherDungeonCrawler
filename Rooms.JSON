@@ -1,8 +1,9 @@
 [
     {
         "ID":1,
+        "Description":"Exit North", 
         "HasEnemy":true,
-        "HasItem":true,
+        "Item":1,
         "Exits": {
             "North":2
         },
@@ -10,8 +11,9 @@
     },
     {
         "Id":2,
+        "Description":"Exit North and South", 
         "HasEnemy":false,
-        "HasItem":true,
+        "Item":1,
         "Exits": {
             "South":1,
             "North":3
@@ -20,8 +22,9 @@
     },
     {
         "Id":3,
+        "Description":"Exit North and South", 
         "HasEnemy":false,
-        "HasItem":true,
+        "Item":0,
         "Exits":
         {
             "South":2,
@@ -31,15 +34,12 @@
     },
     {
         "Id":4,
+        "Description":"Exit South, is Dungeon Exit", 
         "HasEnemy":false,
-        "HasItem":true,
+        "Item":0,
         "Exits": {
             "South":3
         },
         "IsExit":true
     }
-
-
-
-
 ]

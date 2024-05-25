@@ -22,7 +22,7 @@ namespace YetAnotherDungeonCrawler
             dungeon.PopulateRooms();
             currentRoom = dungeon.GetStartingRoom();
             player.SetStartingRoom(currentRoom);
-            //view.PrintRoomList(view.ReadRoomConfig());
+            view.PrintRoomList(view.ReadRoomConfig());
 
             view.WelcomeMsg();
 
@@ -41,7 +41,7 @@ namespace YetAnotherDungeonCrawler
                 {
                     view.TargetMsg(currentRoom.Enemy);
                 }
-                if(player.Room.HasItem)
+                if(player.Room.Item != Item.None)
                 {
                     view.TargetMsg(currentRoom.Item);
                 }
@@ -67,7 +67,7 @@ namespace YetAnotherDungeonCrawler
                         //print no target msg
                         break;
                     case "Pick Up":
-                        if(currentRoom.HasItem)
+                        if(currentRoom.Item != Item.None)
                         {
                             player.PickUpItem();
                         }else
