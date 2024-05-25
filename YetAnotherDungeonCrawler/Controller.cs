@@ -39,11 +39,11 @@ namespace YetAnotherDungeonCrawler
                 
                 if(player.HasValidTarget())
                 {
-                    view.TargetMsg(currentRoom.Enemy);
+                    view.EnemyMsg();
                 }
                 if(player.Room.Item != Item.None)
                 {
-                    view.TargetMsg(currentRoom.Item);
+                    view.ItemMsg(currentRoom.Item);
                 }
 
                 option = view.ReadOption();
@@ -104,7 +104,7 @@ namespace YetAnotherDungeonCrawler
                     case "east":
                         if(player.HasValidTarget())
                         {
-                            view.TargetMsg(currentRoom.Enemy);
+                            view.EnemyMsg();
                         }
                         else if(!player.Move(option, dungeon))
                         {
