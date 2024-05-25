@@ -16,7 +16,7 @@ namespace YetAnotherDungeonCrawler
             this.player = player;
         }
 
-        public void Start(View view)
+        public void Start(IView view)
         {
             dungeon = new Dungeon(view.ReadRoomConfig());
             dungeon.PopulateRooms();

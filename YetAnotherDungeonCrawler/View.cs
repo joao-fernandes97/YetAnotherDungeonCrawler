@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace YetAnotherDungeonCrawler
 {
-    public class View
+    public class View : IView
     {
         private Player player;
         public View(Player player)
