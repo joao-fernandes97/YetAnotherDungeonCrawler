@@ -66,7 +66,7 @@ namespace YetAnotherDungeonCrawler
                         //else
                         //print no target msg
                         break;
-                    case "pickup":
+                    case "pick up":
                         if(currentRoom.Item != Item.None)
                         {
                             player.PickUpItem();
@@ -123,7 +123,7 @@ namespace YetAnotherDungeonCrawler
                             view.NoExitMsg();
                         }
                         break;
-                    case "giveup":
+                    case "give up":
                         view.GaveUpMsg();
                         end = true;
                         break;
