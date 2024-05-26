@@ -19,6 +19,10 @@ namespace YetAnotherDungeonCrawler
             Inventory = new Dictionary<Item, int>();
         }
 
+        /// <summary>
+        /// Sets the room for the player in the beginning of the game
+        /// </summary>
+        /// <param name="Room"> The room the player starts in </param>
         public void SetStartingRoom(Room Room)
         {
             this.Room = Room;
@@ -30,7 +34,7 @@ namespace YetAnotherDungeonCrawler
         /// </summary>
         /// <param name="direction"> Corresponds to player's input </param>
         /// <param name="dungeon"> Used to know the room </param>
-        /// <returns></returns>
+        /// <returns> Whether or not the player moved </returns>
         public bool Move(string direction, Dungeon dungeon)
         {
             if(Room.Exits.ContainsKey(direction))
@@ -100,6 +104,10 @@ namespace YetAnotherDungeonCrawler
 
         }
 
+        /// <summary>
+        /// Checks if there is an enemy in the room
+        /// </summary>
+        /// <returns> Whether or not the player has an enemy </returns>
         public bool HasValidTarget()
         {
             return Room.HasEnemy && Room.Enemy.Health > 0;
