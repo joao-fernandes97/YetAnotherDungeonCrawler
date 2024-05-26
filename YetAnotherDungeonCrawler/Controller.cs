@@ -113,7 +113,11 @@ namespace YetAnotherDungeonCrawler
                         currentRoom = player.Room;
                         break;
                     case "exit":
-                        if (currentRoom.IsExit)
+                        if(player.HasValidTarget())
+                        {
+                            view.EnemyMsg();
+                        }
+                        else if (currentRoom.IsExit)
                         {
                             view.VictoryMsg();
                             end = true;
