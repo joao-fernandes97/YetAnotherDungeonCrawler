@@ -9,13 +9,10 @@ We were both working on most things together, where one would do part of it and 
 
 ## Sln Architecture
 
-<!---
-Add here the description of the sln, how it was organized and the non trivial algorithms used
--->
 This solution was built following the MVC approach, our model includes the classes Character, Player, Enemy, Item, Dungeon and Room.
 Character is the base class for Player and Enemy and ensures they both have AttackPower and HP and that they both can Attack a target.
 Player has an Inventory(Dictionary) of Items and knows what Room he's in.
-Dungeon has a List of Rooms
+Dungeon has a List of Rooms.
 
 The Controller handles the game loop. Our game has no menus, it simply presents a situation and expects a keyword from the player that fits the situation. These are the recognized keywords:
 
@@ -27,10 +24,15 @@ The Controller handles the game loop. Our game has no menus, it simply presents 
 + Give Up: the player can end his adventure early by typing this command
 + Map: this command displays the map of the dungeon again
 
-The Directional and Exit commands will not work if there's an active enemy in the room
-The Pick Up and Heal commands will trigger an enemy attack if done while there's an active enemy in the room
+The Directional and Exit commands will not work if there's an active enemy in the room.
+
+The Pick Up and Heal commands will trigger an enemy attack if done while there's an active enemy in the room.
 
 If the Exit command is successful, the player Gives Up or has his health dropped to 0 the game ends.
+
+The View class implements the IView interface, it handles the reading of Files and output of status messages, most of the methods are self explanatory.
+
+The ReadRoomConfig method is of some note as we use the Json.Net library to deserialize a JSON file into the Rooms that compose the dungeon. If the File is not found it returns an empty list and an error message.
 
 ### Class Diagram
 
