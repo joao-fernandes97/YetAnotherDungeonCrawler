@@ -14,6 +14,25 @@ Add here what each of us did
 <!---
 Add here the description of the sln, how it was organized and the non trivial algorithms used
 -->
+This solution was built following the MVC approach, our model includes the classes Character, Player, Enemy, Item, Dungeon and Room.
+Character is the base class for Player and Enemy and ensures they both have AttackPower and HP and that they both can Attack a target.
+Player has an Inventory(Dictionary) of Items and knows what Room he's in.
+Dungeon has a List of Rooms
+
+The Controller handles the game loop. Our game has no menus, it simply presents a situation and expects a keyword from the player that fits the situation. These are the recognized keywords:
+
++ Attack: this command will try to find an Enemy in the same room that still has HP and attack it, the enemy will attack in return if it is still alive after the hit
++ Pick Up: this command will try to find an item in the current room and move it into the players inventory
++ Heal: this command will heal the player if its health isn't full and he has a Healing Potion in his inventory, spending it in the process
++ North,West,South,East: these directional commands will try to move the player to an adjacent room in that direction, Rooms have a Dictionary of exits that have these directions as keys and the Room ID of the adjacent room as a value
++ Exit: if the player is at a Room marked as the Exit of the Dungeon this command will allow him to escape
++ Give Up: the player can end his adventure early by typing this command
++ Map: this command displays the map of the dungeon again
+
+The Directional and Exit commands will not work if there's an active enemy in the room
+The Pick Up and Heal commands will trigger an enemy attack if done while there's an active enemy in the room
+
+If the Exit command is successful, the player Gives Up or has his health dropped to 0 the game ends.
 
 ### Class Diagram
 
