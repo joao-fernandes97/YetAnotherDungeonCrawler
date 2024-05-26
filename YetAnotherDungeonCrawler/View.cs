@@ -97,9 +97,18 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine($"There's an enemy in this room. ATTACK to get rid of it.");
         }
 
+        /// <summary>
+        /// Message for when there's an item in the room
+        /// Displays the item in blue
+        /// </summary>
+        /// <param name="item"> The item in the room </param>
         public void ItemMsg(Item item)
         {
-            Console.WriteLine($"You can PICK UP the {item} to add it to your inventory");
+            Console.Write("You can PICK UP the ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write(item);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" to add it to your inventory.");
         }
 
         public void NoTargetMsg(object t)
