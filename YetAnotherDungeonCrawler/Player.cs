@@ -24,6 +24,13 @@ namespace YetAnotherDungeonCrawler
             this.Room = Room;
         }
         
+        /// <summary>
+        /// Changes the Room the player is in and returns true
+        /// If the player does not change their room it returns false
+        /// </summary>
+        /// <param name="direction"> Corresponds to player's input </param>
+        /// <param name="dungeon"> Used to know the room </param>
+        /// <returns></returns>
         public bool Move(string direction, Dungeon dungeon)
         {
             if(Room.Exits.ContainsKey(direction))
