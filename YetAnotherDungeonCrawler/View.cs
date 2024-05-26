@@ -21,7 +21,7 @@ namespace YetAnotherDungeonCrawler
         }
         public void WelcomeMsg()
         {
-            Console.WriteLine("Hear ye who enters this place, find the EXIT or GIVE UP and die.");
+            Console.WriteLine("Hear ye who enters this place, find the EXIT or GIVE UP and die.\nAll you have with you is a rusty sword that you can ATTACK with\nand a rudimentary MAP, its up to you to keep track of where you are");
         }
 
         public void InvalidOption()

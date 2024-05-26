@@ -22,7 +22,7 @@ namespace YetAnotherDungeonCrawler
             dungeon.PopulateRooms();
             currentRoom = dungeon.GetStartingRoom();
             player.SetStartingRoom(currentRoom);
-            view.PrintRoomList(view.ReadRoomConfig());
+            //view.PrintRoomList(view.ReadRoomConfig());
 
             view.WelcomeMsg();
             view.ReadDungeonMap();
@@ -34,7 +34,6 @@ namespace YetAnotherDungeonCrawler
             while (player.Health >= 0 && end != true)
             {
                 view.PrintRoomDescription(currentRoom);
-                //might want to append a message if there is a monster or item in the room
 
                 //view.ConfirmMsg();
                 
