@@ -130,6 +130,10 @@ namespace YetAnotherDungeonCrawler
         public void BattleReport()
         {
             Console.WriteLine($"Player: {player.Health} HP // Enemy: {player.Room.Enemy.Health} HP");
+            if(player.Room.Enemy.Health == 0)
+                Console.WriteLine("The enemy is dead");
+            if(player.Health == 0)
+                Console.WriteLine("You died");
         }
 
         public void VictoryMsg()
