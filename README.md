@@ -52,9 +52,20 @@ classDiagram
 
 ### Map
 
-<!---
-Add Map Here
--->
+```mermaid
+---
+
+---
+graph LR
+    A[Room 1] --> B[Room 2]
+    B --> C[Room 5]
+    B --> E[Room 3]
+    C --> D[Room 6]
+    E --> F[Room 4]
+    D --> Z[Exit]
+    
+
+```
 
 ## References
 
