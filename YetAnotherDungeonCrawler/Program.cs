@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace YetAnotherDungeonCrawler
+﻿namespace YetAnotherDungeonCrawler
 {
     class Program
     {

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace YetAnotherDungeonCrawler
@@ -39,8 +38,6 @@ namespace YetAnotherDungeonCrawler
         {
             if(Room.Exits.ContainsKey(direction))
             {
-                //if this method returns null I want to not assign the value
-                //but that shouldn't happen unless the Rooms file is fucked
                 Room = dungeon.GetRoomById(Room.Exits[direction]);
                 return true;
             }
