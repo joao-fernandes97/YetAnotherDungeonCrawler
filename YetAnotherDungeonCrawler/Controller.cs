@@ -33,7 +33,7 @@ namespace YetAnotherDungeonCrawler
 
             bool end = false;
 
-            while (player.Health >= 0 && end != true)
+            while (player.Health > 0 && end != true)
             {
                 view.PrintRoomDescription(currentRoom);
                 
