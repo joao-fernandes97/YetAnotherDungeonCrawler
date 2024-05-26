@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace YetAnotherDungeonCrawler
 {
@@ -47,15 +45,19 @@ namespace YetAnotherDungeonCrawler
             }
         }
 
+        /// <summary>
+        /// Tries to read the Rooms.JSON file and generates a list of rooms
+        /// based on its data, if it can't writes an error message to the console
+        /// and returns an empty list instead, the game won't function in this case
+        /// </summary>
+        /// <returns>The generated list of rooms, or an empty one if there's
+        /// an error with reading the file</returns>
         public List<Room> ReadRoomConfig()
         {
-            //string directory = Directory.GetCurrentDirectory();
             string filename = "Rooms.JSON";
-            //string fullPath = Path.Combine(directory, filename);
 
             if(File.Exists(filename))
             {
-                //using StreamReader sr = new StreamReader(fullPath);
                 string text = File.ReadAllText(filename);
                 List<Room> roomList = JsonConvert.DeserializeObject<List<Room>>(text);
 
