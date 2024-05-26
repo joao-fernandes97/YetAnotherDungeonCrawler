@@ -11,11 +11,19 @@ namespace YetAnotherDungeonCrawler
         private Dungeon dungeon;
         private Room currentRoom;
         
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="player"> The character the user controls </param>
         public Controller(Player player)
         {
             this.player = player;
         }
 
+        /// <summary>
+        /// The main game loop
+        /// </summary>
+        /// <param name="view"> Interface of what will be displayed </param>
         public void Start(IView view)
         {
             dungeon = new Dungeon(view.ReadRoomConfig());
