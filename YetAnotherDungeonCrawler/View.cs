@@ -94,7 +94,11 @@ namespace YetAnotherDungeonCrawler
 
         public void EnemyMsg()
         {
-            Console.WriteLine($"There's an enemy in this room. ATTACK to get rid of it.");
+            Console.Write("There's an");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(" enemy ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("in this room. ATTACK to get rid of it.");
         }
 
         /// <summary>
