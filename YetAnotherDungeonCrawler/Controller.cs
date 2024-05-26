@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace YetAnotherDungeonCrawler
 {
     public class Controller
@@ -30,7 +25,6 @@ namespace YetAnotherDungeonCrawler
             dungeon.PopulateRooms();
             currentRoom = dungeon.GetStartingRoom();
             player.SetStartingRoom(currentRoom);
-            //view.PrintRoomList(view.ReadRoomConfig());
 
             view.WelcomeMsg();
             view.ReadDungeonMap();
@@ -42,8 +36,6 @@ namespace YetAnotherDungeonCrawler
             while (player.Health >= 0 && end != true)
             {
                 view.PrintRoomDescription(currentRoom);
-
-                //view.ConfirmMsg();
                 
                 if(player.HasValidTarget())
                 {
@@ -68,11 +60,6 @@ namespace YetAnotherDungeonCrawler
                         {
                             view.NoTargetMsg(currentRoom.Enemy);
                         }
-                        //player Attack
-                        //enemy Attack
-                        //print result
-                        //else
-                        //print no target msg
                         break;
                     case "pick up":
                         if(currentRoom.Item != Item.None)
@@ -149,9 +136,7 @@ namespace YetAnotherDungeonCrawler
                 }
 
                 view.ConfirmMsg();
-        
-            }
-               
+            }    
         }
     }
 }
