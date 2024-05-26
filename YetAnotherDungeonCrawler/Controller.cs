@@ -25,6 +25,7 @@ namespace YetAnotherDungeonCrawler
             view.PrintRoomList(view.ReadRoomConfig());
 
             view.WelcomeMsg();
+            view.ReadDungeonMap();
 
             string option;
 
@@ -126,6 +127,9 @@ namespace YetAnotherDungeonCrawler
                     case "give up":
                         view.GaveUpMsg();
                         end = true;
+                        break;
+                    case "map":
+                        view.ReadDungeonMap();
                         break;
                     default:
                         view.InvalidOption();

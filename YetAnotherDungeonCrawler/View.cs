@@ -36,7 +36,12 @@ namespace YetAnotherDungeonCrawler
 
         public void ReadDungeonMap()
         {
+            string filename = "Map.txt";
 
+            if (File.Exists(filename))
+            {
+                Console.WriteLine(File.ReadAllText(filename));
+            }
         }
 
         public List<Room> ReadRoomConfig()
@@ -83,12 +88,6 @@ namespace YetAnotherDungeonCrawler
         {
             Console.WriteLine("Couldn't find a path in that direction!");
         }
-        
-        /* public void TargetMsg(object t)
-        {
-            string target = t.GetType().Name;
-            Console.WriteLine($"There's an {target} in this room.");
-        } */
 
         public void EnemyMsg()
         {

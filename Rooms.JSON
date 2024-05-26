@@ -1,44 +1,66 @@
 [
     {
         "ID":1,
-        "Description":"Exit North", 
-        "HasEnemy":true,
-        "Item":1,
+        "Description":"You stand at the entrance of the foreboding crypt, \n sputtering sconces line the walls providing some light,\n you hear the shuffling of reanimated corpses further\n ahead. There's a passage further NORTH", 
+        "HasEnemy":false,
+        "Item":0,
         "Exits": {
-            "North":2
+            "north":2
         },
         "IsExit":false
     },
     {
         "Id":2,
-        "Description":"Exit North and South", 
-        "HasEnemy":false,
-        "Item":1,
+        "Description":"You stand in a T shaped room, SOUTH would lead you to \n the entrance, there's a faint breeze coming from the \n path leading EAST and a fowl smell coming from the one \n leading WEST", 
+        "HasEnemy":true,
+        "Item":0,
         "Exits": {
-            "South":1,
-            "North":3
+            "south":1,
+            "west":5,
+            "east":3
         },
         "IsExit":false
     },
     {
         "Id":3,
-        "Description":"Exit North and South", 
+        "Description":"A narrow spiralling staircase carved out of the rock, \n at its base a passage leads NORTH into a dark room, \n upstairs a corridor leads EAST", 
         "HasEnemy":false,
-        "Item":0,
+        "Item":1,
         "Exits":
         {
-            "South":2,
-            "North":4
+            "west":2,
+            "north":4
         },
         "IsExit":false
     },
     {
         "Id":4,
-        "Description":"Exit South, is Dungeon Exit", 
+        "Description":"The pungent smell of expired ingredients and materials \n assault your senses, the walls of this small room are \n lined with tall cabinets full of glass jars and other \n utensils. It seems this was at one point used as some \n sort of laboratory but has long since been abandoned. \n you can only go back SOUTH from here", 
         "HasEnemy":false,
+        "Item":1,
+        "Exits": {
+            "south":3
+        },
+        "IsExit":false
+    },
+    {
+        "Id":5,
+        "Description":"A bending corridor with caskets lining its walls, you \n get the uneasy feeling that something might jump out, \n of them at any moment. the corridor opens up NORTH \n where you see some faint early morning light seeping \n through. Its other end points WEST", 
+        "HasEnemy":true,
         "Item":0,
         "Exits": {
-            "South":3
+            "north":6,
+            "east":2
+        },
+        "IsExit":false
+    },
+    {
+        "Id":6,
+        "Description":"The light you saw and breeze you felt seem to be coming \n from a crack in the farthest wall ahead of you. That \n has to be your EXIT out of this place. Otherwise you can \n go back SOUTH if you like it here so much.", 
+        "HasEnemy":true,
+        "Item":0,
+        "Exits": {
+            "south":5
         },
         "IsExit":true
     }
