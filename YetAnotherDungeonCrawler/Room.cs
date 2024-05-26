@@ -15,8 +15,15 @@ namespace YetAnotherDungeonCrawler
         public bool IsExit {get; set;}
         public bool HasEnemy {get; set;}
 
+        /// <summary>
+        /// Empty Constructor used only to instantiate
+        /// </summary>
         public Room(){}
 
+        /// <summary>
+        /// Override of the ToString method
+        /// </summary>
+        /// <returns> the id, exits and if it has an enemy and item </returns>
         public override string ToString()
         {
             string exits = "";
