@@ -27,11 +27,13 @@ namespace YetAnotherDungeonCrawler
 
         public void NoPathFoundMsg();
         
-        public void TargetMsg(object t);
+        public void EnemyMsg();
+
+        public void ItemMsg(Item item);
 
         public void NoTargetMsg(object t);
 
-        void BattleReport()
+        void BattleReport();
 
         void VictoryMsg();
 
