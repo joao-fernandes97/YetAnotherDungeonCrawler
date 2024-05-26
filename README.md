@@ -5,9 +5,7 @@
 + João Fernandes - 22304583
 + Inês Gomes - 22305790
 
-<!---
-Add here what each of us did
--->
+We were both working on most things together, where one would do part of it and the other would finish and/or fix it. There wasn't exactly a defined role.
 
 ## Sln Architecture
 
