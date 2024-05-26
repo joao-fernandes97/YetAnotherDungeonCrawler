@@ -76,11 +76,11 @@ classDiagram
 
 ---
 graph LR
-    A[Room 1] --> B[Room 2]
-    B --> C[Room 5]
-    B --> E[Room 3]
-    C --> D[Room 6]
-    E --> F[Room 4]
+    A[Room 1] -- North --> B[Room 2]
+    B -- West --> C[Room 5]
+    B -- East --> E[Room 3]
+    C -- North --> D[Room 6]
+    E -- North --> F[Room 4]
     D --> Z[Exit]
     
 
