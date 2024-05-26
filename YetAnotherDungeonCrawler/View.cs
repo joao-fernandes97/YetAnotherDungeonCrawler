@@ -34,6 +34,9 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine(room.Description);
         }
 
+        /// <summary>
+        /// Imports the map from a txt file
+        /// </summary>
         public void ReadDungeonMap()
         {
             string filename = "Map.txt";
@@ -125,6 +128,9 @@ namespace YetAnotherDungeonCrawler
             Console.WriteLine("You gave up and couldn't reach the end.");
         }
 
+        /// <summary>
+        /// Used so player isn't immediately overwhelmed with information
+        /// </summary>
         public void ConfirmMsg()
         {
             Console.Write("Press any Key to continue...");
